@@ -4,7 +4,7 @@ class Danmaku2ass < Formula
   head "https://github.com/m13253/danmaku2ass.git"
 
   def install
-    system "make"
-    system "make", "install", "NO_GETTEXT = YesPlease", "PREFIX=#{prefix}"
+    system "make", "NO_GETTEXT = YesPlease", "PREFIX=#{prefix}"
+    system "make", "install"
   end
 end
