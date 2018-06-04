@@ -6,7 +6,7 @@ class Danmaku2ass < Formula
   depends_on "gettext" => :build
 
   def install
-    system "make", "PREFIX=#{prefix}"
-    system "make", "install"
+    system "make"
+    system "make", "install", "PREFIX=#{prefix}"
   end
 end
