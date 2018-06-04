@@ -5,6 +5,6 @@ class Danmaku2ass < Formula
 
   def install
     system "make"
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make", "install", "NO_GETTEXT = YesPlease", "PREFIX=#{prefix}"
   end
 end
