@@ -3,8 +3,10 @@ class Danmaku2ass < Formula
   homepage "http://m13253.blogspot.com/2013/11/play-danmaku-offline-danmaku2ass.html"
   head "https://github.com/m13253/danmaku2ass.git"
 
+  depends_on "gettext" => :build
+
   def install
-    system "make", "NO_GETTEXT=YesPlease", "PREFIX=#{prefix}"
+    system "make", "PREFIX=#{prefix}"
     system "make", "install"
   end
 end
