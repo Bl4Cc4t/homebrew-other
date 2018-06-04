@@ -5,6 +5,7 @@ class Danmaku2ass < Formula
 
   depends_on "gettext" => :build
   depends_on "python3"
+  depends_on "nicovideo-dl" => :recommended
 
   def install
     inreplace "Makefile" do |s|
