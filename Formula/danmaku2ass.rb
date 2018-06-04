@@ -4,8 +4,12 @@ class Danmaku2ass < Formula
   head "https://github.com/m13253/danmaku2ass.git"
 
   depends_on "gettext" => :build
+  depends_on "python3"
 
   def install
+    inreplace "Makefile" do |s|
+      s.gsub! "-Dm0755", "-m0755"
+    end
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end
