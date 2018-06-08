@@ -7,7 +7,8 @@ class Jar2app < Formula
   def install
     prefix.install Dir["*.md"]
     prefix.install Dir["LICENSE"]
-    bin.install Dir["*.py"]
-    bin.install Dir["jar2app_basefiles"]
+    libexec.install Dir["jar2app.py"]
+    libexec.install Dir["jar2app_basefiles"]
+    bin.install_symlink libexec/"jar2app.py" => "jar2app"
   end
 end
