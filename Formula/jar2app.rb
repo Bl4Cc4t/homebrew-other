@@ -3,8 +3,11 @@ class Jar2app < Formula
   head "https://github.com/Jorl17/jar2app.git"
 
   depends_on "python3"
-  
+
   def install
-    system "./install.sh", "#{prefix}"
+    prefix.install Dir["*.md"]
+    prefix.install Dir["LICENSE"]
+    bin.install Dir["*.py"]
+    bin.install Dir["jar2app_basefiles"]
   end
 end
