@@ -5,10 +5,13 @@ class Jar2app < Formula
   depends_on "python3"
 
   def install
+    ENV.prepend_create_path "PYTHONPATH", libexec
+
     prefix.install Dir["*.md"]
     prefix.install Dir["LICENSE"]
     libexec.install Dir["jar2app.py"]
     libexec.install Dir["jar2app_basefiles"]
     bin.install_symlink libexec/"jar2app.py" => "jar2app"
+    bin.env_script_all_files(libexec, :PYTHONPATH => ENV["PYTHONPATH"])
   end
 end
