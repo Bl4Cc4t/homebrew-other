@@ -12,8 +12,10 @@ class Pincrush < Formula
       s.gsub! "g++-4.2", "g++"
       s.gsub! "ARCHS ?= i386 x86_64", "ARCHS := x86_64"
     end
-    inreplace Dir["libpng/*.c"] do |s|
+    inreplace Dir["libpng/png.c", "libpng/pngerror.c"] do |s|
       s.gsub! "png_ptr = png_ptr;",       "//png_ptr = png_ptr;"
+    end
+    inreplace Dir["libpng/pngread.c"] do |s|
       s.gsub! "transforms = transforms;", "//transforms = transforms;"
       s.gsub! "params = params;",         "//params = params;"
     end
