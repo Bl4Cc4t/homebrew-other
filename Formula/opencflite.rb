@@ -6,6 +6,8 @@ class Opencflite < Formula
   sha256 "3b593967e17de080491a5c18ee0938a6cce8f3f4a06ff62b042351e681fef549"
   head "svn://svn.code.sf.net/p/opencflite/code/trunk"
 
+  depends_on "icu4c" => :build
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make"
