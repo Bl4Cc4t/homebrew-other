@@ -7,7 +7,7 @@ class Pincrush < Formula
   head "https://github.com/DHowett/pincrush.git"
 
   def install
-    system ".make", "target=native"
+    system "make", "target=native"
     # system "make", "install"
     prefix.install Dir["*"]
   end
