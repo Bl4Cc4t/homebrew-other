@@ -3,7 +3,7 @@ class Pincrush < Formula
   homepage "http://howett.net/pincrush/"
   version "0.9.2"
   url "https://github.com/DHowett/pincrush/archive/0.9.2.tar.gz"
-  sha256 "c428d05fb4705616dc9c6fbe5f57b3216e3fb7b9c1cdf6094dfdc85d4eb0b5be"
+  sha256 "6a9199599f284cb11e3c32b72c8581cff0c61a89ff26a6a70421234d94e18457"
   head "https://github.com/DHowett/pincrush.git"
 
   def install
