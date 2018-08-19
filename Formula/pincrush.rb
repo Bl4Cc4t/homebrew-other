@@ -23,7 +23,8 @@ class Pincrush < Formula
       s.gsub! "info_ptr = info_ptr;",       "//info_ptr = info_ptr;"
     end
     system "make", "target=native"
-    # system "make", "install"
-    prefix.install Dir["*"]
+
+    prefix.install Dir["README", "LICENSE"]
+    bin.install Dir["obj/macosx/pincrush"]
   end
 end
