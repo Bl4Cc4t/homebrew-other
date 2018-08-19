@@ -7,6 +7,9 @@ class Pincrush < Formula
   head "https://github.com/DHowett/pincrush.git"
 
   def install
+    inreplace Dir["framework/makefiles/targets/Darwin/*.mk"], do |s|
+      s.gsub! "g++-4.2", "g++"
+    end
     system "make", "target=native"
     # system "make", "install"
     prefix.install Dir["*"]
