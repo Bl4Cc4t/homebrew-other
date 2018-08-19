@@ -1,4 +1,4 @@
-class OpenCFLite < Formula
+class Opencflite < Formula
   desc "A cross platform toolkit for building applications on Mac OS X, Windows, and Linux."
   homepage "https://sourceforge.net/projects/opencflite"
   version "476.19.0"
