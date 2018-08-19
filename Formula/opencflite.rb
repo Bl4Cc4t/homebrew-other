@@ -7,6 +7,8 @@ class Opencflite < Formula
   head "svn://svn.code.sf.net/p/opencflite/code/trunk"
 
   depends_on "icu4c" => :build
+  depends_on "pkg-config" => :build
+  depends_on "ossp-uuid" => :build
 
   def install
     system "./configure", "--prefix=#{prefix}"
