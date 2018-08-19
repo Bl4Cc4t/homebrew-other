@@ -15,7 +15,7 @@ class Pincrush < Formula
     inreplace Dir["libpng/png.c", "libpng/pngerror.c"] do |s|
       s.gsub! "png_ptr = png_ptr;",       "//png_ptr = png_ptr;"
     end
-    inreplace Dir["libpng/pngread.c"] do |s|
+    inreplace Dir["libpng/pngread.c", "libpng/pngwrite.c"] do |s|
       s.gsub! "transforms = transforms;", "//transforms = transforms;"
       s.gsub! "params = params;",         "//params = params;"
     end
