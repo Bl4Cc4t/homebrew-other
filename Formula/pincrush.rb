@@ -7,8 +7,10 @@ class Pincrush < Formula
   head "https://github.com/DHowett/pincrush.git"
 
   def install
-    inreplace Dir["framework/makefiles/targets/Darwin/*.mk"] do |s|
+    inreplace Dir["framework/makefiles/targets/Darwin/native.mk"] do |s|
+      s.gsub! "gcc-4.2", "gcc"
       s.gsub! "g++-4.2", "g++"
+      s.gsub! "ARCHS ?= i386 x86_64", "ARCHS := x86_64"
     end
     system "make", "target=native"
     # system "make", "install"
