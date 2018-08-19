@@ -6,6 +6,8 @@ class Mediaextract < Formula
   sha256 "4e63e7abd73c4c54c18b3d1914b38bd357d3384b17ce52d9fcb9b15cfc8e8b30"
   head "https://github.com/panzi/mediaextract.git"
 
+  depends_on "help2man" => :build
+
   def install
     system "make", "builddir"
     system "make"
