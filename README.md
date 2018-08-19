@@ -1,7 +1,7 @@
 homebrew-other
 ==============
 
-Some Formulae for some random projects.
+Some Formulae for some projects (not mine).
 
 Installation
 ------------
@@ -16,3 +16,5 @@ List of Projects
 ---------------
 
 - [danmaku2ass](https://github.com/m13253/danmaku2ass)
+- [jar2app](https://github.com/Jorl17/jar2app)
+- [pincrush](https://github.com/DHowett/pincrush)
