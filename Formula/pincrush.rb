@@ -20,7 +20,7 @@ class Pincrush < Formula
       s.gsub! "params = params;",         "//params = params;"
     end
     inreplace Dir["libpng/pngrutil.c"] do |s|
-      s.gsub! "info_ptr = png_ptr;",       "//info_ptr = png_ptr;"
+      s.gsub! "info_ptr = info_ptr;",       "//info_ptr = info_ptr;"
     end
     system "make", "target=native"
     # system "make", "install"
