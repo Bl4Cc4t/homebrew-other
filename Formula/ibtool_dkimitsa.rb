@@ -11,12 +11,12 @@ class IbtoolDkimitsa < Formula
   # end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
-    # %w[futures requests singledispatch six].each do |r|
-    #   resource(r).stage do
-    #     system "python", *Language::Python.setup_install_args(libexec/"vendor")
-    #   end
-    end
+    # ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+    # # %w[futures requests singledispatch six].each do |r|
+    # #   resource(r).stage do
+    # #     system "python", *Language::Python.setup_install_args(libexec/"vendor")
+    # #   end
+    # end
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
     system "python", *Language::Python.setup_install_args(libexec)
