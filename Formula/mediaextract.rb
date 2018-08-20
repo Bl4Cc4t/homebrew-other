@@ -7,7 +7,7 @@ class Mediaextract < Formula
   head "https://github.com/panzi/mediaextract.git"
 
   depends_on "help2man" => :build
-  depends_on "gnu-sed"
+  depends_on "gnu-sed" => :build
 
   def install
     inreplace Dir["Makefile"] do |s|
