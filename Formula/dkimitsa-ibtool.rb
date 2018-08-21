@@ -1,4 +1,4 @@
-class IbtoolDkimitsa < Formula
+class DkimitsaIbtool < Formula
   desc "iOS Interface Builder utility, implemented in python."
   homepage "https://github.com/dkimitsa/ibtool/tree/advanced_ibdump"
   head "https://github.com/dkimitsa/ibtool.git", :branch => "advanced_ibdump"
