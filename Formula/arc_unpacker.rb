@@ -17,7 +17,7 @@ class ArcUnpacker < Formula
 
   patch do
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
-    sha256 "23206e558c77de1d6cf3124f5fd3e097f9d0ed26a0e12f19487233575bacc1ac"
+    sha256 "6f87a6a5331dab13864bfc040fc35c801deffe281ed45e7f57935b0b18cab826"
   end
   def install
     (buildpath/"build").mkpath
