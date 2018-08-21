@@ -11,7 +11,7 @@ class ArcUnpacker < Formula
   depends_on "jpeg"
   depends_on "libiconv"
   depends_on "openssl"
-  depends_on "libwebp" => :optional
+  depends_on "webp" => :optional
 
   def install
     (buildpath/"build").mkpath
