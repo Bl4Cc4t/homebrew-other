@@ -15,7 +15,9 @@ Install with the usual `brew install --HEAD <name>`
 List of Projects
 ---------------
 
+- [arc_unpacker](https://github.com/vn-tools/arc_unpacker)
 - [danmaku2ass](https://github.com/m13253/danmaku2ass)
+- [ibtool/ibdump2](https://github.com/dkimitsa/ibtool/tree/advanced_ibdump)
 - [jar2app](https://github.com/Jorl17/jar2app)
 - [Mediaextract](http://panzi.github.com/mediaextract)
 - [pincrush](https://github.com/DHowett/pincrush)
