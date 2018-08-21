@@ -15,10 +15,10 @@ class ArcUnpacker < Formula
   depends_on "webp" => :optional
   depends_on "cmake" => :build
 
-  patch do
-    url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker/CMakeLists.diff"
-    sha256 "b00d03ae771137026d54d9f5c5b06b3930e05399a5ed266a5b8996c604716c83"
-  end
+  # patch do
+  #   url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker/CMakeLists.diff"
+  #   sha256 "b00d03ae771137026d54d9f5c5b06b3930e05399a5ed266a5b8996c604716c83"
+  # end
   def install
     (buildpath/"build").mkpath
     Dir.chdir("#{buildpath}/build")
