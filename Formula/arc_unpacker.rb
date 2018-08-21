@@ -16,8 +16,8 @@ class ArcUnpacker < Formula
   depends_on "cmake" => :build
 
   patch do
-    url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker/CMakeLists.diff"
-    sha256 "9abd2b96379cc5bd1225ebc446d15b5a293ada1383de3669184b80fa6e85898d"
+    url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
+    sha256 "23206e558c77de1d6cf3124f5fd3e097f9d0ed26a0e12f19487233575bacc1ac"
   end
   def install
     (buildpath/"build").mkpath
