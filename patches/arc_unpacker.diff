@@ -42,3 +42,35 @@ index bb249e7..0aa4622 100644
      jpeg_start_decompress(&info);
  
      const auto width = info.output_width;
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 94db283..bb0b355 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -38,6 +38,8 @@ find_package(OpenSSL REQUIRED)
+ include_directories(${OPENSSL_INCLUDE_DIR})
+ link_directories(${OPENSSL_LIBRARY_DIRS})
+ 
++find_library(LIBSTDCXX NAMES stdc++)
++
+ # --------------------
+ # Global build options
+ # --------------------
+@@ -73,6 +75,8 @@ endif()
+ 
+ add_definitions(-D_FILE_OFFSET_BITS=64) # 64-bit off_t
+ 
++add_compile_options(-stdlib=libstdc++)
++
+ # ------------
+ # Source files
+ # ------------
+@@ -172,7 +176,7 @@ endif()
+ add_library(libau OBJECT ${au_sources} ${au_headers})
+ 
+ add_executable(arc_unpacker "${CMAKE_SOURCE_DIR}/src/main.cc" $<TARGET_OBJECTS:libau>)
+-target_link_libraries(arc_unpacker ${unicode} ${iconv} ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES} ${OPENSSL_LIBRARIES})
++target_link_libraries(arc_unpacker ${LIBSTDCXX} ${unicode} ${iconv} ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES} ${OPENSSL_LIBRARIES})
+ 
+ add_executable(run_tests ${test_sources} ${test_headers} "${CMAKE_SOURCE_DIR}/tests/main.cc" $<TARGET_OBJECTS:libau>)
+ target_link_libraries(run_tests ${iconv} ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES} ${OPENSSL_LIBRARIES})

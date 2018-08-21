@@ -25,7 +25,7 @@ class ArcUnpacker < Formula
   #    jpeg_read_header(&info, true);
   patch do
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
-    sha256 "6f87a6a5331dab13864bfc040fc35c801deffe281ed45e7f57935b0b18cab826"
+    sha256 "93c1555414668b134388b107703cfb0a512ab329d71f9f483ba2d03bd97ab7ac"
   end
   def install
     ENV.append "CPPFLAGS", "-I#{Formula["libiconv"].opt_include}"
