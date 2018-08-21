@@ -1,0 +1,17 @@
+--- CMakeLists.txt	2016-07-16 16:40:12.000000000 +0200
++++ CMakeLists.txt	2018-08-21 18:21:13.000000000 +0200
+@@ -109,10 +109,12 @@
+ if(WIN32)
+     list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_ansi.cc")
+     list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_dummy.cc")
+-else(CYGWIN OR UNIX)
++endif()
++if(CYGWIN OR UNIX)
+     list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_win.cc")
+     list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_dummy.cc")
+-else()
++endif()
++if(APPLE)
+     list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_win.cc")
+     list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_ansi.cc")
+ endif()
