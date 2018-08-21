@@ -34,7 +34,6 @@ class ArcUnpacker < Formula
     (buildpath/"build").mkpath
     Dir.chdir("#{buildpath}/build")
     system "cmake", "-DCMAKE_BUILD_TYPE=release", ".."
-    system "make", "clean_all"
     system "make", "-j8", "arc_unpacker"
     system "make", "install", "PREFIX=#{prefix}"
   end
