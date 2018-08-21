@@ -17,3 +17,14 @@ index b0eabe7..94db283 100644
      list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_win.cc")
      list(REMOVE_ITEM au_sources "${CMAKE_SOURCE_DIR}/src/logger_ansi.cc")
  endif()
+ 
+ diff --git a/src/algo/call_stack_keeper.cc b/src/algo/call_stack_keeper.cc
+ index e9747d1..1a18aef 100644
+ --- a/src/algo/call_stack_keeper.cc
+ +++ b/src/algo/call_stack_keeper.cc
+ @@ -1,5 +1,6 @@
+  #include "algo/call_stack_keeper.h"
+  #include "err.h"
+ +#include <string>
+
+  using namespace au::algo;
