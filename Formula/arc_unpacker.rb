@@ -6,6 +6,13 @@ class ArcUnpacker < Formula
   sha256 "c962bbd45999f77c35f8cba416770c7228e03672ae28d8a181524585ba36a2c2"
   head "https://github.com/vn-tools/arc_unpacker.git"
 
+  depends_on "boost"
+  depends_on "libpng"
+  depends_on "jpeg"
+  depends_on "libiconv"
+  depends_on "openssl"
+  depends_on "libwebp" => :optional
+
   def install
     (buildpath/"build").mkpath
     Dir.chdir("#{buildpath}/build")
