@@ -28,8 +28,8 @@ class ArcUnpacker < Formula
     sha256 "6f87a6a5331dab13864bfc040fc35c801deffe281ed45e7f57935b0b18cab826"
   end
   def install
-    ENV.append "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
-    ENV.append "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
+    ENV.append "CPPFLAGS", "-I#{Formula["libiconv"].opt_include}"
+    ENV.append "LDFLAGS", "-L#{Formula["libiconv"].opt_lib}"
 
     (buildpath/"build").mkpath
     Dir.chdir("#{buildpath}/build")
