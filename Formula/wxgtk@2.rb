@@ -9,6 +9,8 @@ class WxgtkAT2 < Formula
   depends_on "pkg-config" => :build
   depends_on 'gtk+'
 
+  fails_with :clang
+
   def install
 
     args=[
