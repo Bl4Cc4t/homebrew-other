@@ -34,7 +34,7 @@ class WxgtkAT2 < Formula
       "--with-libjpeg",
       "--with-libpng",
       "--with-libtiff",
-      "--with-macosx-version-min=no"
+      "--with-macosx-version-min=no",
       "--with-opengl",
       # "--with-osx_cocoa",
       "--with-zlib",
