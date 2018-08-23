@@ -40,7 +40,6 @@ class WxgtkAT2 < Formula
     ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
     ENV.append 'LDFLAGS', '-lGL -lGLU'
     # ENV.append "CFLAGS", "-fPIC"
-    system "./autogen.sh"
     system "./configure", *args
 
     system "make install"
