@@ -20,9 +20,9 @@ class Wxmedit < Formula
   # option "with-bundle", "Enable compilation of the .app bundle."
 
   def install
-    # inreplace Dir["src/mad_utils.cpp", "src/wxm/utils.cpp"] do |s|
-    #   s.gsub! "wx/mac/private.h", "wx/msw/private.h"
-    # end
+    inreplace Dir["src/mad_utils.cpp", "src/wxm/utils.cpp"] do |s|
+      s.gsub! "wx/mac/private.h", "wx/osx/private.h"
+    end
 
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
