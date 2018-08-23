@@ -1,4 +1,4 @@
-class Wxgtk2 < Formula
+class WxgtkAT2 < Formula
   #https://gist.github.com/jvalduvieco/4376555
   homepage 'http://www.wxwidgets.org'
   #url 'http://sourceforge.net/projects/wxwindows/files/2.8.12/wxWidgets-2.8.12.tar.bz2'
