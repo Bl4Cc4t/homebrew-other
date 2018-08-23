@@ -14,7 +14,7 @@ class WxgtkAT2 < Formula
   depends_on "freetype"
   depends_on "zlib"
 
-  fails_with :clang
+  # fails_with :clang
 
   def install
 
