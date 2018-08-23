@@ -32,7 +32,7 @@ class WxgtkAT2 < Formula
       "--enable-unicode",
       "--disable-debug",
       "--prefix=#{prefix}",
-      "--with-gtk",
+      # "--with-gtk",
       # "--with-osx_cocoa",
       # "--enable-universal_binary",
       "--disable-shared",
