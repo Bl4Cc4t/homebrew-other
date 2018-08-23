@@ -14,7 +14,7 @@ class Wxmedit < Formula
   depends_on "gettext"
   depends_on "gtk+"
   depends_on "icu4c"
-  depends_on "wxmac"
+  depends_on "wxgtk@2"
   depends_on "wxwidgets"
 
   # option "with-bundle", "Enable compilation of the .app bundle."
