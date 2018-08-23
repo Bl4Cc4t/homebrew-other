@@ -30,7 +30,7 @@ class WxgtkAT2 < Formula
       "--prefix=#{prefix}",
       "--with-gtk",
       "--with-osx_cocoa",
-      "--enable-universal_binary",
+      # "--enable-universal_binary",
       "--disable-shared",
       "--without-macosx-sdk"
     ]
