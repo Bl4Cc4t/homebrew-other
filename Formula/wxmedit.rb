@@ -23,7 +23,7 @@ class Wxmedit < Formula
     #https://trac.macports.org/ticket/40390#comment:6
     inreplace Dir["src/mad_utils.cpp", "src/wxm/utils.cpp"] do |s|
       s.gsub! "wx/mac/private.h", "wx/osx/private.h"
-      s.gsub! "Processes.h", "Carbon/Processes.h"
+      s.gsub! "Processes.h", "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/HIServices.framework/Headers/Processes.h"
     end
 
     system "./autogen.sh"
