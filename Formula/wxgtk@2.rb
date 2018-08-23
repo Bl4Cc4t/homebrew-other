@@ -31,7 +31,8 @@ class WxgtkAT2 < Formula
       "--with-gtk",
       "--with-osx_cocoa",
       "--enable-universal_binary",
-      "--disable-shared"
+      "--disable-shared",
+      "--without-macosx-sdk"
     ]
     ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
     ENV.append 'LDFLAGS', '-lGL -lGLU'
