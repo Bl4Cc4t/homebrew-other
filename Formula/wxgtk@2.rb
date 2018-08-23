@@ -22,7 +22,7 @@ class WxgtkAT2 < Formula
     end
 
     args=[
-      "--with-mac"
+      "--with-mac",
       "--with-libpng",
       "--with-opengl",
       "--with-libjpeg",
