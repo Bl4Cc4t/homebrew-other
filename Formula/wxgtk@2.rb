@@ -14,7 +14,6 @@ class WxgtkAT2 < Formula
   depends_on "freetype"
   depends_on "zlib"
 
-  # fails_with :clang
   patch do
     # stolen from https://github.com/macports/macports-ports/tree/master/graphics/wxWidgets-2.8/files
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/wxgtk@2.diff"
@@ -29,7 +28,7 @@ class WxgtkAT2 < Formula
       "--enable-display",
       "--enable-graphics_ctx",
       "--enable-unicode",
-      "--enable-universal_binary",
+      # "--enable-universal_binary",
       "--disable-debug",
       "--disable-sdltest",
       # "--disable-shared",
