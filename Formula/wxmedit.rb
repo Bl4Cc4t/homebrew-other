@@ -10,6 +10,7 @@ class Wxmedit < Formula
   depends_on "automake" => :build
   depends_on "boost" => :build
   depends_on "curl"
+  depends_on "gettext"
   depends_on "icu4c"
   depends_on "wxwidgets"
 
