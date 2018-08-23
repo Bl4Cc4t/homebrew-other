@@ -22,22 +22,24 @@ class WxgtkAT2 < Formula
     end
 
     args=[
-      "--with-mac",
-      "--with-libpng",
-      "--with-opengl",
-      "--with-libjpeg",
-      "--with-libtiff",
-      "--with-freetype",
-      "--with-zlib",
+      # "--enable-universal_binary",
       "--enable-unicode",
       "--disable-debug",
+      "--disable-sdltest",
+      # "--disable-shared",
       "--prefix=#{prefix}",
+      "--with-mac",
+      "--with-freetype",
       # "--with-gtk",
-      # "--with-osx_cocoa",
-      # "--enable-universal_binary",
-      "--disable-shared",
-      "--without-macosx-sdk",
+      "--with-libjpeg",
+      "--with-libpng",
+      "--with-libtiff",
       "--with-macosx-version-min=no"
+      "--with-opengl",
+      # "--with-osx_cocoa",
+      "--with-zlib",
+      "--without-macosx-sdk",
+      "--without-sdl",
     ]
     ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
     ENV.append 'LDFLAGS', '-lGL -lGLU' #-lX11
