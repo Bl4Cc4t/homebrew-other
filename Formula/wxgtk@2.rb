@@ -33,7 +33,7 @@ class WxgtkAT2 < Formula
       "--disable-debug",
       "--prefix=#{prefix}",
       "--with-gtk",
-      "--with-osx_cocoa",
+      # "--with-osx_cocoa",
       # "--enable-universal_binary",
       "--disable-shared",
       "--without-macosx-sdk",
