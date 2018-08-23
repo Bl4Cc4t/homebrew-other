@@ -26,7 +26,7 @@ class WxgtkAT2 < Formula
       "--with-gtk"
     ]
     ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
-    ENV.append 'LDFLAGS', '-lX11 -lGL -lGLU'
+    ENV.append 'LDFLAGS', '-lGL -lGLU'
     # ENV.append "CFLAGS", "-fPIC"
 
     system "./configure", *args
