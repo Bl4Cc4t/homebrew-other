@@ -20,8 +20,10 @@ class Wxmedit < Formula
   # option "with-bundle", "Enable compilation of the .app bundle."
 
   def install
+    #https://trac.macports.org/ticket/40390#comment:6
     inreplace Dir["src/mad_utils.cpp", "src/wxm/utils.cpp"] do |s|
       s.gsub! "wx/mac/private.h", "wx/osx/private.h"
+      s.gsub! "Processes.h", "Carbon/Processes.h"
     end
 
     system "./autogen.sh"
