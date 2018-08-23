@@ -1,0 +1,204 @@
+diff --git a/Makefile.in b/Makefile.in
+index 5fe72e1..642f4d2 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -5033,8 +5033,8 @@ COND_TOOLKIT_WINCE___MEDIA_PLATFORM_SRC_OBJECTS =  \
+ @COND_PLATFORM_MACOSX_1@__HTML_SRC_PLATFORM_OBJECTS = monodll_chm.o
+ @COND_PLATFORM_UNIX_1@__HTML_SRC_PLATFORM_OBJECTS = monodll_chm.o
+ @COND_TOOLKIT_MSW@__HTML_SRC_PLATFORM_OBJECTS = monodll_helpbest.o
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS \
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@	= monodll_sound_sdl.o
++@COND_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS \
++@COND_USE_PLUGINS_0@	= monodll_sound_sdl.o
+ COND_MONOLITHIC_1_SHARED_0___monolib___depname = \
+ 	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)$(LIBEXT)
+ @COND_MONOLITHIC_1_SHARED_0@__monolib___depname = $(COND_MONOLITHIC_1_SHARED_0___monolib___depname)
+@@ -6830,8 +6830,8 @@ COND_TOOLKIT_WINCE___MEDIA_PLATFORM_SRC_OBJECTS_1 =  \
+ @COND_PLATFORM_MACOSX_1@__HTML_SRC_PLATFORM_OBJECTS_1 = monolib_chm.o
+ @COND_PLATFORM_UNIX_1@__HTML_SRC_PLATFORM_OBJECTS_1 = monolib_chm.o
+ @COND_TOOLKIT_MSW@__HTML_SRC_PLATFORM_OBJECTS_1 = monolib_helpbest.o
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS_1 \
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@	= monolib_sound_sdl.o
++@COND_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS_1 \
++@COND_USE_PLUGINS_0@	= monolib_sound_sdl.o
+ COND_MONOLITHIC_0_SHARED_1___basedll___depname = \
+ 	$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIX)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3)
+ @COND_MONOLITHIC_0_SHARED_1@__basedll___depname = $(COND_MONOLITHIC_0_SHARED_1___basedll___depname)
+@@ -10405,8 +10405,8 @@ COND_WXUNIV_1___ADVANCED_SRC_OBJECTS_2 =  \
+ @COND_TOOLKIT_MSW@	= advdll_datectrl.o
+ @COND_TOOLKIT_WINCE@__ADVANCED_PLATFORM_NATIVE_SRC_OBJECTS_2 \
+ @COND_TOOLKIT_WINCE@	= advdll_datectrl.o
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS_2 \
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@	= advdll_sound_sdl.o
++@COND_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS_2 \
++@COND_USE_PLUGINS_0@	= advdll_sound_sdl.o
+ COND_MONOLITHIC_0_SHARED_0_USE_GUI_1___advlib___depname = \
+ 	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_adv-$(WX_RELEASE)$(HOST_SUFFIX)$(LIBEXT)
+ @COND_MONOLITHIC_0_SHARED_0_USE_GUI_1@__advlib___depname = $(COND_MONOLITHIC_0_SHARED_0_USE_GUI_1___advlib___depname)
+@@ -10470,8 +10470,8 @@ COND_WXUNIV_1___ADVANCED_SRC_OBJECTS_3 =  \
+ @COND_TOOLKIT_MSW@	= advlib_datectrl.o
+ @COND_TOOLKIT_WINCE@__ADVANCED_PLATFORM_NATIVE_SRC_OBJECTS_3 \
+ @COND_TOOLKIT_WINCE@	= advlib_datectrl.o
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS_3 \
+-@COND_PLATFORM_UNIX_1_USE_PLUGINS_0@	= advlib_sound_sdl.o
++@USE_PLUGINS_0@__PLUGIN_ADV_SRC_OBJECTS_3 \
++@USE_PLUGINS_0@	= advlib_sound_sdl.o
+ COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1___mediadll___depname = \
+ 	$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_media$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3)
+ @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@__mediadll___depname = $(COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1___mediadll___depname)
+diff --git a/configure b/configure
+index 9c9931c..ef262a0 100755
+--- a/configure
++++ b/configure
+@@ -16169,7 +16169,7 @@ See \`config.log' for more details." >&2;}
+ echo "$as_me: WARNING: Please use --with-macosx-sdk=PATH and --enable-universal_binary without an argument" >&2;}
+             fi
+         fi
+-                OSX_UNIV_OPTS="-arch ppc -arch i386"
++                OSX_UNIV_OPTS="@@ARCHS@@"
+         CXXFLAGS="$OSX_UNIV_OPTS $CXXFLAGS"
+         CFLAGS="$OSX_UNIV_OPTS $CFLAGS"
+         OBJCXXFLAGS="$OSX_UNIV_OPTS $OBJCXXFLAGS"
+@@ -24932,44 +24932,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
+
+
+-SEARCH_INCLUDE="\
+-    /usr/local/include        \
+-    /usr/local/X11/include    \
+-    /usr/local/include/X11    \
+-    /usr/local/X11R6/include  \
+-    /usr/local/include/X11R6  \
+-                              \
+-    /usr/Motif-2.1/include    \
+-    /usr/Motif-1.2/include    \
+-    /usr/include/Motif1.2     \
+-                              \
+-    /usr/dt/include           \
+-    /usr/openwin/include      \
+-                              \
+-    /usr/include/Xm           \
+-                              \
+-    /usr/X11R6/include        \
+-    /usr/X11R6.4/include      \
+-                              \
+-    /usr/include/X11R6        \
+-                              \
+-    /usr/X11/include          \
+-    /usr/include/X11          \
+-                              \
+-    /usr/XFree86/include/X11  \
+-    /usr/pkg/include          \
+-                              \
+-    /usr/local/X1R5/include  \
+-    /usr/local/include/X11R5  \
+-    /usr/X11R5/include        \
+-    /usr/include/X11R5        \
+-                              \
+-    /usr/local/X11R4/include  \
+-    /usr/local/include/X11R4  \
+-    /usr/X11R4/include        \
+-    /usr/include/X11R4        \
+-                              \
+-    /usr/openwin/share/include"
++SEARCH_INCLUDE="@@PREFIX@@/include"
+
+ echo "$as_me:$LINENO: checking for libraries directory" >&5
+ echo $ECHO_N "checking for libraries directory... $ECHO_C" >&6
+@@ -28916,7 +28879,7 @@ rm -f conftest.err conftest.$ac_objext \
+                                         wx_cv_lib_gtk=none
+                 else
+                                                             wx_cv_cflags_gtk=$GTK_CFLAGS
+-                    wx_cv_libs_gtk=`echo $GTK_LIBS | sed -e 's/ -l[^ ]*cairo[^ ]*//g'`
++                    wx_cv_libs_gtk="$GTK_LIBS"
+                 fi
+
+
+@@ -33190,7 +33153,7 @@ echo "$as_me: WARNING: wxGLCanvas not implemented for this port, library will be
+         OPENGL_LIBS="-framework OpenGL -framework AGL"
+     elif test "$wxUSE_MSW" = 1; then
+         OPENGL_LIBS="-lopengl32 -lglu32"
+-    elif test "$USE_DARWIN" = 1; then
++    elif test "$wxUSE_MAC" = 1; then
+         OPENGL_LIBS=""
+     else
+                         echo "$as_me:$LINENO: checking for OpenGL headers" >&5
+@@ -33801,22 +33764,6 @@ rm -f conftest.err conftest.$ac_objext \
+       ;;
+
+       *-*-darwin* )
+-        install_name_tool=`which install_name_tool`
+-        if test "$install_name_tool" -a -x "$install_name_tool"; then
+-            SAMPLES_RPATH_POSTLINK="\$(wx_top_builddir)/change-install-names \$(LIBDIRNAME) \$(prefix) \$@"
+-            cat <<EOF >change-install-names
+-#!/bin/sh
+-libnames=\`cd \${1} ; ls -1 | grep '\.[0-9][0-9]*\.dylib\$'\`
+-inst_cmd="install_name_tool "
+-for i in \${libnames} ; do
+-    inst_cmd="\${inst_cmd} -change \${2}/lib/\${i} \${1}/\${i}"
+-done
+-\${inst_cmd} \${3}
+-EOF
+-            chmod +x change-install-names
+-
+-            HEADER_PAD_OPTION="-headerpad_max_install_names"
+-        fi
+       ;;
+
+       *-*-cygwin* | *-*-mingw32* )
+diff --git a/setup.h.in b/setup.h.in
+index a549fe9..1b1d2e1 100644
+--- a/setup.h.in
++++ b/setup.h.in
+@@ -552,7 +552,7 @@
+ #define wxUSE_RICHEDIT2 0
+ #endif
+
+-#if !defined(__WIN32__) && !defined(__APPLE__)
++#if !defined(__WIN32__) && !defined(__WXMAC__)
+ #define wxUSE_CAIRO 1
+ #else
+ #define wxUSE_CAIRO 0
+diff --git a/src/generic/graphicc.cpp b/src/generic/graphicc.cpp
+index 34b4d2f..41a367a 100644
+--- a/src/generic/graphicc.cpp
++++ b/src/generic/graphicc.cpp
+@@ -1474,10 +1474,10 @@ wxGraphicsContext * wxCairoRenderer::CreateContext( const wxMemoryDC& dc)
+
+ wxGraphicsContext * wxCairoRenderer::CreateContextFromNativeContext( void * context )
+ {
+-#if __WXMSW__
++#ifdef __WXMSW__
+     return new wxCairoContext(this,(HDC)context);
+ #endif
+-#if __WXGTK__
++#ifdef __WXGTK__
+     return new wxCairoContext(this,(cairo_t*)context);
+ #endif
+ }
+diff --git a/src/gtk/app.cpp b/src/gtk/app.cpp
+index 4eebe33..d85db4f 100644
+--- a/src/gtk/app.cpp
++++ b/src/gtk/app.cpp
+@@ -415,6 +415,21 @@ bool wxApp::Initialize(int& argc, wxChar **argv)
+ {
+     bool init_result;
+
++    // Mac OS X passes a process serial number command line argument when
++    // the application is launched from the Finder. This argument must be
++    // removed from the command line arguments before being handled by the
++    // application (otherwise applications would need to handle it)
++    if ( argc > 1 )
++    {
++        static const wxChar *ARG_PSN = _T("-psn_");
++        if ( wxStrncmp(argv[1], ARG_PSN, wxStrlen(ARG_PSN)) == 0 )
++        {
++            // remove this argument
++            --argc;
++            memmove(argv + 1, argv + 2, argc * sizeof(char *));
++        }
++    }
++
+ #if wxUSE_THREADS
+     if (!g_thread_supported())
+         g_thread_init(NULL);

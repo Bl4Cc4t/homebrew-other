@@ -21,9 +21,18 @@ class WxgtkAT2 < Formula
       s.gsub! "wx/wxprec.h.gch wx/wxprec.h", "wx/wxprec.h.gch"
     end
 
+
+    patch do
+      # stolen from https://github.com/macports/macports-ports/tree/master/graphics/wxWidgets-2.8/files
+      url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/wxgtk@2.diff"
+      sha256 "4dd0ff18709c1a226d803adfabb9bc01425cc9a17afaf9cd5f9daa40cc80ab28"
+    end
+
     args=[
-      # "--enable-universal_binary",
+      "--enable-display",
+      "--enable-graphics_ctx",
       "--enable-unicode",
+      "--enable-universal_binary",
       "--disable-debug",
       "--disable-sdltest",
       # "--disable-shared",
