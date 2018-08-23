@@ -10,7 +10,7 @@ class WxgtkAT2 < Formula
   depends_on 'gtk+'
   depends_on "libpng"
   depends_on "jpeg"
-  depends_on "tiff"
+  depends_on "libtiff"
   depends_on "freetype"
   depends_on "zlib"
 
