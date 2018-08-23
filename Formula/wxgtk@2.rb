@@ -23,7 +23,8 @@ class WxgtkAT2 < Formula
       "--enable-unicode",
       "--disable-debug",
       "--prefix=#{prefix}",
-      "--with-gtk"
+      "--with-gtk",
+      "--with-osx_cocoa",
     ]
     ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
     ENV.append 'LDFLAGS', '-lGL -lGLU'
