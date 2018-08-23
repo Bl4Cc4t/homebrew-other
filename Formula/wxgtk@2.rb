@@ -22,6 +22,7 @@ class WxgtkAT2 < Formula
     end
 
     args=[
+      "--with-mac"
       "--with-libpng",
       "--with-opengl",
       "--with-libjpeg",
@@ -35,7 +36,8 @@ class WxgtkAT2 < Formula
       "--with-osx_cocoa",
       # "--enable-universal_binary",
       "--disable-shared",
-      "--without-macosx-sdk"
+      "--without-macosx-sdk",
+      "--with-macosx-version-min=no"
     ]
     ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
     ENV.append 'LDFLAGS', '-lX11 -lGL -lGLU'
