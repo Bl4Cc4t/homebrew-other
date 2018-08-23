@@ -23,6 +23,8 @@ class ArcUnpacker < Formula
   # -src/dec/jpeg/jpeg_image_decoder.cc:26:5:
   #    error: no matching function for call to 'jpeg_read_header'
   #    jpeg_read_header(&info, true);
+
+  # fk off
   patch do
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
     sha256 "93c1555414668b134388b107703cfb0a512ab329d71f9f483ba2d03bd97ab7ac"
