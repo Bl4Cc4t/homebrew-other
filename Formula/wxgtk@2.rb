@@ -8,8 +8,6 @@ class WxgtkAT2 < Formula
   # depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on "pkg-config" => :build
   depends_on 'gtk+'
-  depends_on "gcc"
-
 
   def install
 
@@ -25,7 +23,7 @@ class WxgtkAT2 < Formula
       "--prefix=#{prefix}",
       "--with-gtk"
     ]
-    #ENV.append_to_cflags '-arch x86_64' if MacOS.prefer_64_bit?
+    ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
     ENV.append 'LDFLAGS', '-lX11 -lGL -lGLU'
     # ENV.append "CFLAGS", "-fPIC"
 
