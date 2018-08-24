@@ -58,8 +58,6 @@ class Gtkx < Formula
       ENV["NOCONFIGURE"] = "yes"
       system "./autogen.sh"
     end
-    #https://yihui.name/en/2018/01/install-rgtk2-macos/
-    ENV.append "PKG_CONFIG_PATH", "/usr/local/lib/pkgconfig:/usr/local/lib/pkgconfig/gtk+-2.0.pc:/opt/X11/lib/pkgconfig"
     system "./configure", *args
     system "make", "install"
 
