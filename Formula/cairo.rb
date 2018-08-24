@@ -1,4 +1,5 @@
 class Cairo < Formula
+  # modification: build cairo with x11
   desc "Vector graphics library with cross-device output support"
   homepage "https://cairographics.org/"
   url "https://cairographics.org/releases/cairo-1.14.12.tar.xz"

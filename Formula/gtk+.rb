@@ -1,4 +1,5 @@
 class Gtkx < Formula
+  # modification: build gtk+ with x11
   desc "GUI toolkit"
   homepage "https://gtk.org/"
   revision 2
