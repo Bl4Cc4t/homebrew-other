@@ -13,6 +13,7 @@ class WxgtkAT2 < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+  depends_on "mesalib-glw"
   depends_on "sdl"
   depends_on "sdl_mixer"
   depends_on "zlib"
