@@ -5,7 +5,7 @@ class WxgtkAT2 < Formula
   url "http://downloads.sourceforge.net/project/wxwindows/2.8.12/wxGTK-2.8.12.tar.gz"
   sha256 '13cf89f2c29bcb90bb56a31ac1af10f23003d3d43c3e4b24991518f5dc4e5abe'
 
-  # depends_on :x11 # if your formula requires any X11/XQuartz components
+  depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on "pkg-config" => :build
   depends_on "expat"
   depends_on "freeglut"
@@ -54,9 +54,9 @@ class WxgtkAT2 < Formula
       "--without-sdl",
     ]
     # ENV.append "CFLAGS", "-arch", "x86_64" # if MacOS.prefer_64_bit?
-    # ENV.append "LDFLAGS", "-lGL", "-lGLU" #-lX11
-    ENV.append "LDFLAGS", "-L/opt/X11/lib"
-    ENV.append "CPPFLAGS", "-L/opt/X11/include"
+    ENV.append "LDFLAGS", "-lglut"#, "-lGL", "-lGLU", "-lX11"
+    # ENV.append "LDFLAGS", "-L/opt/X11/lib"
+    # ENV.append "CPPFLAGS", "-L/opt/X11/include"
     system "./configure", *args
 
     system "make install"
