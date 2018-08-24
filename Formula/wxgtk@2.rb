@@ -7,10 +7,12 @@ class WxgtkAT2 < Formula
 
   # depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on "pkg-config" => :build
+  depends_on "expat"
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "gtk+"
   depends_on "jpeg"
+  depends_on "libiconv"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "mesalib-glw"
@@ -51,8 +53,8 @@ class WxgtkAT2 < Formula
       "--without-macosx-sdk",
       "--without-sdl",
     ]
-    ENV.append "CFLAGS", '-arch x86_64' # if MacOS.prefer_64_bit?
-    ENV.append 'LDFLAGS', '-lGL -lGLU' #-lX11
+    # ENV.append "CFLAGS", "-arch", "x86_64" # if MacOS.prefer_64_bit?
+    # ENV.append "LDFLAGS", "-lGL", "-lGLU" #-lX11
     # ENV.append "CFLAGS", "-fPIC"
     system "./configure", *args
 
