@@ -47,7 +47,7 @@ index 5fe72e1..642f4d2 100644
  	$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_media$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@__mediadll___depname = $(COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1___mediadll___depname)
 diff --git a/configure b/configure
-index 9c9931c..ef262a0 100755
+index 9c9931c..837e5b9 100755
 --- a/configure
 +++ b/configure
 @@ -16169,7 +16169,7 @@ See \`config.log' for more details." >&2;}
@@ -60,9 +60,9 @@ index 9c9931c..ef262a0 100755
          CFLAGS="$OSX_UNIV_OPTS $CFLAGS"
          OBJCXXFLAGS="$OSX_UNIV_OPTS $OBJCXXFLAGS"
 @@ -24932,44 +24932,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
-
-
-
+ 
+ 
+ 
 -SEARCH_INCLUDE="\
 -    /usr/local/include        \
 -    /usr/local/X11/include    \
@@ -102,7 +102,7 @@ index 9c9931c..ef262a0 100755
 -                              \
 -    /usr/openwin/share/include"
 +SEARCH_INCLUDE="@@PREFIX@@/include"
-
+ 
  echo "$as_me:$LINENO: checking for libraries directory" >&5
  echo $ECHO_N "checking for libraries directory... $ECHO_C" >&6
 @@ -28916,7 +28879,7 @@ rm -f conftest.err conftest.$ac_objext \
@@ -112,20 +112,22 @@ index 9c9931c..ef262a0 100755
 -                    wx_cv_libs_gtk=`echo $GTK_LIBS | sed -e 's/ -l[^ ]*cairo[^ ]*//g'`
 +                    wx_cv_libs_gtk="$GTK_LIBS"
                  fi
-
-
-@@ -33190,7 +33153,7 @@ echo "$as_me: WARNING: wxGLCanvas not implemented for this port, library will be
+ 
+ 
+@@ -33190,8 +33153,8 @@ echo "$as_me: WARNING: wxGLCanvas not implemented for this port, library will be
          OPENGL_LIBS="-framework OpenGL -framework AGL"
      elif test "$wxUSE_MSW" = 1; then
          OPENGL_LIBS="-lopengl32 -lglu32"
 -    elif test "$USE_DARWIN" = 1; then
+-        OPENGL_LIBS=""
 +    elif test "$wxUSE_MAC" = 1; then
-         OPENGL_LIBS=""
++        OPENGL_LIBS="-framework Carbon -framework OpenGL -framework GLUT"
      else
                          echo "$as_me:$LINENO: checking for OpenGL headers" >&5
+ echo $ECHO_N "checking for OpenGL headers... $ECHO_C" >&6
 @@ -33801,22 +33764,6 @@ rm -f conftest.err conftest.$ac_objext \
        ;;
-
+ 
        *-*-darwin* )
 -        install_name_tool=`which install_name_tool`
 -        if test "$install_name_tool" -a -x "$install_name_tool"; then
@@ -144,8 +146,13 @@ index 9c9931c..ef262a0 100755
 -            HEADER_PAD_OPTION="-headerpad_max_install_names"
 -        fi
        ;;
-
+ 
        *-*-cygwin* | *-*-mingw32* )
+@@ -52855,4 +52802,3 @@ echo "                                       libmspack          ${wxUSE_LIBMSPAC
+ echo "                                       sdl                ${wxUSE_LIBSDL}"
+ 
+ echo ""
+-
 diff --git a/setup.h.in b/setup.h.in
 index a549fe9..1b1d2e1 100644
 --- a/setup.h.in
@@ -153,7 +160,7 @@ index a549fe9..1b1d2e1 100644
 @@ -552,7 +552,7 @@
  #define wxUSE_RICHEDIT2 0
  #endif
-
+ 
 -#if !defined(__WIN32__) && !defined(__APPLE__)
 +#if !defined(__WIN32__) && !defined(__WXMAC__)
  #define wxUSE_CAIRO 1
@@ -164,7 +171,7 @@ index 34b4d2f..41a367a 100644
 --- a/src/generic/graphicc.cpp
 +++ b/src/generic/graphicc.cpp
 @@ -1474,10 +1474,10 @@ wxGraphicsContext * wxCairoRenderer::CreateContext( const wxMemoryDC& dc)
-
+ 
  wxGraphicsContext * wxCairoRenderer::CreateContextFromNativeContext( void * context )
  {
 -#if __WXMSW__
@@ -183,7 +190,7 @@ index 4eebe33..d85db4f 100644
 @@ -415,6 +415,21 @@ bool wxApp::Initialize(int& argc, wxChar **argv)
  {
      bool init_result;
-
+ 
 +    // Mac OS X passes a process serial number command line argument when
 +    // the application is launched from the Finder. This argument must be
 +    // removed from the command line arguments before being handled by the
