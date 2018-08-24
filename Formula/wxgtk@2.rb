@@ -7,6 +7,7 @@ class WxgtkAT2 < Formula
 
   # depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on "pkg-config" => :build
+  depends_on "freeglut"
   depends_on "freetype"
   depends_on "gtk+"
   depends_on "jpeg"
