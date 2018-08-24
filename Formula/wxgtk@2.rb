@@ -9,7 +9,7 @@ class WxgtkAT2 < Formula
   depends_on "pkg-config" => :build
   depends_on "freeglut"
   depends_on "freetype"
-  depends_on "bl4cc4t/other/gtk+3"
+  depends_on "bl4cc4t/other/gtk+"
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
