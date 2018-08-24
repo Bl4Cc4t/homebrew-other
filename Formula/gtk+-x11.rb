@@ -1,4 +1,4 @@
-class Gtkx < Formula
+class GtkxX11 < Formula
   # modification: build gtk+ with x11
   desc "GUI toolkit"
   homepage "https://gtk.org/"
@@ -31,7 +31,7 @@ class Gtkx < Formula
   depends_on "atk"
   depends_on "pango"
   depends_on "hicolor-icon-theme"
-  depends_on "bl4cc4t/other/cairo"
+  depends_on "bl4cc4t/other/cairo-x11"
 
   # Patch to allow Eiffel Studio to run in Cocoa / non-X11 mode, as well as Freeciv's freeciv-gtk2 client
   # See:
