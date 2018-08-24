@@ -54,9 +54,7 @@ class WxgtkAT2 < Formula
       "--without-sdl",
     ]
     # ENV.append "CFLAGS", "-arch", "x86_64" # if MacOS.prefer_64_bit?
-    ENV.append "LDFLAGS", "-framework", "Carbon",
-                          "-framework", "OpenGL",
-                          "-framework", "GLUT"#, "-lGL", "-lGLU", "-lX11"
+    ENV.append "LDFLAGS", "-framework Carbon -framework OpenGL -framework GLUT"#, "-lGL", "-lGLU", "-lX11"
     # ENV.append "LDFLAGS", "-L/opt/X11/lib"
     # ENV.append "CPPFLAGS", "-L/opt/X11/include"
     system "./configure", *args
