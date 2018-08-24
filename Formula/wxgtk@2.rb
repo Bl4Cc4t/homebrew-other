@@ -23,7 +23,7 @@ class WxgtkAT2 < Formula
   patch do
     # stolen from https://github.com/macports/macports-ports/tree/master/graphics/wxWidgets-2.8/files
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/wxgtk@2.diff"
-    sha256 "deca456cc1b60efdd0c31f98fa56e29d18719eeff70791fe3fbb227b2cd13a18"
+    sha256 "e27189eab9105ff7870a15de8bc4a6a3a86c4896a1e0766a0eb99f6ac11da168"
   end
   def install
     inreplace Dir["Makefile.in"] do |s|
@@ -55,8 +55,8 @@ class WxgtkAT2 < Formula
     ]
     # ENV.append "CFLAGS", "-arch", "x86_64" # if MacOS.prefer_64_bit?
     # ENV.append "LDFLAGS", "-lGL", "-lGLU", "-lX11"
-    ENV.append "LDFLAGS", "-lGL", "-L/opt/X11/lib/"
-    ENV.append "CPPFLAGS", "-I/opt/X11/include"
+    # ENV.append "LDFLAGS", "-lGL", "-L/opt/X11/lib/"
+    # ENV.append "CPPFLAGS", "-I/opt/X11/include"
     system "./configure", *args
 
     system "make install"
