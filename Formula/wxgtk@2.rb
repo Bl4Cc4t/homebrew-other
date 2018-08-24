@@ -21,7 +21,7 @@ class WxgtkAT2 < Formula
   depends_on "zlib"
 
   patch do
-    # stolen from https://github.com/macports/macports-ports/tree/master/graphics/wxWidgets-2.8/files
+    # partly stolen from https://github.com/macports/macports-ports/tree/master/graphics/wxWidgets-2.8/files
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/wxgtk@2.diff"
     sha256 "2b6f2c4c7394603314e355c11495137d212f12f9a5a723d9fc6b2f08684958bc"
   end
