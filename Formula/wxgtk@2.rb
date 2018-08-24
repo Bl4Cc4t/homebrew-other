@@ -55,13 +55,8 @@ class WxgtkAT2 < Formula
     # ENV.append "LDFLAGS", "-lGL", "-lGLU", "-lX11"
     # ENV.append "LDFLAGS", "-lGL", "-L/opt/X11/lib/"
     # ENV.append "CPPFLAGS", "-I/opt/X11/include"
-    
-    #https://yihui.name/en/2018/01/install-rgtk2-macos/
-    ENV.append "PKG_CONFIG_PATH", "/usr/local/lib/pkgconfig",
-                                  "/usr/local/lib/pkgconfig/gtk+-2.0.pc",
-                                  "/opt/X11/lib/pkgconfig"
-    system "./configure", *args
 
+    system "./configure", *args
     system "make install"
 
     cd "contrib" do
