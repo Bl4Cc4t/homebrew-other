@@ -12,7 +12,7 @@ class Wxmedit < Formula
   depends_on "pkg-config" => :build
   depends_on "curl"
   depends_on "gettext"
-  depends_on "bl4cc4t/other/gtk+"
+  depends_on "bl4cc4t/other/gtk+-x11"
   depends_on "icu4c"
   depends_on "wxgtk@2"
   # depends_on "wxwidgets"
