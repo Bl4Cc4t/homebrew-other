@@ -30,6 +30,7 @@ class Gtkx < Formula
   depends_on "atk"
   depends_on "pango"
   depends_on "hicolor-icon-theme"
+  depends_on "bl4cc4t/other/cairo"
 
   # Patch to allow Eiffel Studio to run in Cocoa / non-X11 mode, as well as Freeciv's freeciv-gtk2 client
   # See:
