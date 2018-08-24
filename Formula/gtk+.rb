@@ -3,16 +3,16 @@ class Gtkx < Formula
   homepage "https://gtk.org/"
   revision 2
 
-  stable do
-    url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.32.tar.xz"
-    sha256 "b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e"
-  end
-
-  bottle do
-    sha256 "f1e4965a3aa5655e628e46c1ffd9421ec1abf9ba4f0757be1ce7b3a8009fec58" => :high_sierra
-    sha256 "77275da434ff045cab02f69e3847b983510bd2f45e022b0af0adb620c6a6821a" => :sierra
-    sha256 "f6117acd04e65a2ec378ad21b8b6519dc0d048f24b398456c09474af74ec2c11" => :el_capitan
-  end
+  # stable do
+  #   url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.32.tar.xz"
+  #   sha256 "b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e"
+  # end
+  #
+  # bottle do
+  #   sha256 "f1e4965a3aa5655e628e46c1ffd9421ec1abf9ba4f0757be1ce7b3a8009fec58" => :high_sierra
+  #   sha256 "77275da434ff045cab02f69e3847b983510bd2f45e022b0af0adb620c6a6821a" => :sierra
+  #   sha256 "f6117acd04e65a2ec378ad21b8b6519dc0d048f24b398456c09474af74ec2c11" => :el_capitan
+  # end
 
   head do
     url "https://gitlab.gnome.org/GNOME/gtk.git", :branch => "gtk-2-24"
