@@ -47,7 +47,7 @@ index 5fe72e1..642f4d2 100644
  	$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_media$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(dll___targetsuf3)
  @COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1@__mediadll___depname = $(COND_MONOLITHIC_0_SHARED_1_USE_GUI_1_USE_MEDIA_1___mediadll___depname)
 diff --git a/configure b/configure
-index 9c9931c..25ac4cc 100755
+index 9c9931c..7aab00b 100755
 --- a/configure
 +++ b/configure
 @@ -16169,7 +16169,7 @@ See \`config.log' for more details." >&2;}
@@ -132,6 +132,15 @@ index 9c9931c..25ac4cc 100755
    do
      for ac_extension in a so sl dylib dll.a; do
        if test -f "$ac_dir/libGL.$ac_extension"; then
+@@ -33455,7 +33418,7 @@ echo "${ECHO_T}found in $ac_find_libraries" >&6
+ echo $ECHO_N "checking for -lGLU... $ECHO_C" >&6
+ 
+   ac_find_libraries=
+-  for ac_dir in $SEARCH_LIB;
++  for ac_dir in $SEARCH_LIB /opt/X11/lib;
+   do
+     for ac_extension in a so sl dylib dll.a; do
+       if test -f "$ac_dir/libGLU.$ac_extension"; then
 @@ -33801,22 +33764,6 @@ rm -f conftest.err conftest.$ac_objext \
        ;;
  
