@@ -7,11 +7,13 @@ class WxgtkAT2 < Formula
 
   # depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on "pkg-config" => :build
-  depends_on 'gtk+'
-  depends_on "libpng"
-  depends_on "jpeg"
-  depends_on "libtiff"
   depends_on "freetype"
+  depends_on "gtk+"
+  depends_on "jpeg"
+  depends_on "libpng"
+  depends_on "libtiff"
+  depends_on "sdl"
+  depends_on "sdl_mixer"
   depends_on "zlib"
 
   patch do
@@ -33,15 +35,16 @@ class WxgtkAT2 < Formula
       "--disable-sdltest",
       # "--disable-shared",
       "--prefix=#{prefix}",
-      "--with-mac",
+      # "--with-mac",
       "--with-freetype",
-      # "--with-gtk",
+      "--with-gtk",
       "--with-libjpeg",
       "--with-libpng",
       "--with-libtiff",
       "--with-macosx-version-min=no",
       "--with-opengl",
       # "--with-osx_cocoa",
+      "--with-sdl",
       "--with-zlib",
       "--without-macosx-sdk",
       "--without-sdl",
