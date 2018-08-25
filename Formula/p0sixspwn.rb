@@ -10,6 +10,7 @@ class P0sixspwn < Formula
   depends_on "pkg-config" => :build
   depends_on "libplist"
   depends_on "libzip"
+  depends_on "openssl"
 
   # patch do
   #   url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
