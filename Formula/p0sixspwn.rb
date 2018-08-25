@@ -16,7 +16,7 @@ class P0sixspwn < Formula
   # end
   def install
     inreplace Dir["autogen.sh"] do |s|
-      s.gsub! "./configure", "//./configure"
+      s.gsub! "./configure", "#./configure"
     end
     # ENV.append "CPPFLAGS", "-I#{Formula["libiconv"].opt_include}"
     # ENV.append "LDFLAGS", "-L#{Formula["libiconv"].opt_lib}"
