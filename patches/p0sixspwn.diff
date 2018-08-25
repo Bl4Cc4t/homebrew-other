@@ -1,0 +1,13 @@
+diff --git a/src/backup_file.c b/src/backup_file.c
+index 916c365..3167fcd 100644
+--- a/src/backup_file.c
++++ b/src/backup_file.c
+@@ -307,7 +307,7 @@ int backup_file_get_record_data(backup_file_t * bfile, unsigned char **data,
+                                 unsigned int *size)
+ {
+     if (!bfile)
+-        return;
++        return -1;
+     if (!bfile->mbdb_record) {
+         ERROR("%s: ERROR: no mbdb_record present\n", __func__);
+         return -1;

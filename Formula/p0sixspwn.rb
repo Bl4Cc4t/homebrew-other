@@ -12,10 +12,10 @@ class P0sixspwn < Formula
   depends_on "libzip"
   depends_on "openssl"
 
-  # patch do
-  #   url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
-  #   sha256 "93c1555414668b134388b107703cfb0a512ab329d71f9f483ba2d03bd97ab7ac"
-  # end
+  patch do
+    url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/p0sixspwn.diff"
+    sha256 "caacafedd997ca04933194ae697e8fa7f6b8c6033b1f553c2df7f60f9fae79fe"
+  end
   def install
     inreplace Dir["autogen.sh"] do |s|
       s.gsub! "./configure", "#./configure"
