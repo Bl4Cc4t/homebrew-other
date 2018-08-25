@@ -7,8 +7,9 @@ class P0sixspwn < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config"
+  depends_on "pkg-config" => :build
   depends_on "libplist"
+  depends_on "libzip"
 
   # patch do
   #   url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
@@ -25,7 +26,7 @@ class P0sixspwn < Formula
     # Dir.chdir("#{buildpath}/build")
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
-    system "make", "-j8", "arc_unpacker"
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make"
+    system "make", "install"
   end
 end
