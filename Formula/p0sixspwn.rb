@@ -7,6 +7,7 @@ class P0sixspwn < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config"
   depends_on "libplist"
 
   # patch do
@@ -14,13 +15,16 @@ class P0sixspwn < Formula
   #   sha256 "93c1555414668b134388b107703cfb0a512ab329d71f9f483ba2d03bd97ab7ac"
   # end
   def install
+    inreplace Dir["autogen.sh"] do |s|
+      s.gsub! "./configure", "//./configure"
+    end
     # ENV.append "CPPFLAGS", "-I#{Formula["libiconv"].opt_include}"
     # ENV.append "LDFLAGS", "-L#{Formula["libiconv"].opt_lib}"
     #
     # (buildpath/"build").mkpath
     # Dir.chdir("#{buildpath}/build")
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "-j8", "arc_unpacker"
     system "make", "install", "PREFIX=#{prefix}"
   end
