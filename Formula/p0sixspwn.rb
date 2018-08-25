@@ -4,7 +4,7 @@ class P0sixspwn < Formula
   head "https://github.com/yanniks/p0sixspwn.git"
 
   depends_on "automake" => :build
-  depends_on "autoreconf" => :build
+  # depends_on "autoreconf" => :build
   depends_on "libtool" => :build
   depends_on "libplist"
 
