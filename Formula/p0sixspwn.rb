@@ -1,4 +1,4 @@
-class P0sixpwn < Formula
+class P0sixspwn < Formula
   desc "iOS Jailbreak for 6.1.[3-4-5-6]"
   homepage "https://ih8sn0w.com/p0sixspwn.html"
   head "https://github.com/yanniks/p0sixspwn.git"
