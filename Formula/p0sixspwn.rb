@@ -3,7 +3,7 @@ class P0sixspwn < Formula
   homepage "https://ih8sn0w.com/p0sixspwn.html"
   head "https://github.com/yanniks/p0sixspwn.git"
 
-  depends_on 'autom4te' => :build
+  # depends_on 'autom4te' => :build
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
