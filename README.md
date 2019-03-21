@@ -1,6 +1,6 @@
 # homebrew-other
 
-Some Formulae for some projects (not mine).
+Some Formulae for some projects (mostly not mine).
 
 ## Installation
 
