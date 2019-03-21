@@ -8,9 +8,10 @@ class Danmaku2ass < Formula
   depends_on "nicovideo-dl" => :recommended
 
   def install
-    inreplace "Makefile" do |s|
-      s.gsub! "-Dm0755", "-m0755"
-    end
+    # fixed in ed16949
+    # inreplace "Makefile" do |s|
+    #   s.gsub! "-Dm0755", "-m0755"
+    # end
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end

@@ -29,7 +29,16 @@ class ArcUnpacker < Formula
     url "https://raw.githubusercontent.com/Bl4Cc4t/homebrew-other/master/patches/arc_unpacker.diff"
     sha256 "93c1555414668b134388b107703cfb0a512ab329d71f9f483ba2d03bd97ab7ac"
   end
+
   def install
+
+    # inreplace "CMakeLists.txt" do |s|
+    #   s.gsub! "set(CMAKE_CXX_STANDARD 14)", "set(CMAKE_CXX_STANDARD 11)"
+    #   s.gsub! "c++14", "c++11"
+    # end
+
+    # ENV.append "CXXFLAGS", "-std=c++11"
+    # ENV.append "CXXFLAGS", "-stdlib=libc++"
     ENV.append "CPPFLAGS", "-I#{Formula["libiconv"].opt_include}"
     ENV.append "LDFLAGS", "-L#{Formula["libiconv"].opt_lib}"
 

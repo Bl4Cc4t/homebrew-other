@@ -1,10 +1,8 @@
-homebrew-other
-==============
+# homebrew-other
 
 Some Formulae for some projects (not mine).
 
-Installation
-------------
+## Installation
 
 Having the package manager [Homebrew](https://brew.sh/) installed is mandatory (duh).
 
@@ -12,15 +10,18 @@ Just tap this repo: `brew tap bl4cc4t/other`.
 
 Install with the usual `brew install --HEAD <name>`
 
-List of (working) Projects:
----------------
+## List of (working) Projects:
 
-<!-- - [arc_unpacker](https://github.com/vn-tools/arc_unpacker) -->
-- [danmaku2ass](https://github.com/m13253/danmaku2ass)
-- [ibtool/ibdump2](https://github.com/dkimitsa/ibtool/tree/advanced_ibdump)
-- [jar2app](https://github.com/Jorl17/jar2app)
-- [Mediaextract](http://panzi.github.com/mediaextract)
-- [pincrush](https://github.com/DHowett/pincrush)
-- [PNGExtract](https://github.com/jomo/PNGExtract)
+Name                                                                                        | HEAD    | Release
+--------------------------------------------------------------------------------------------|---------|--------
+<!-- [arc_unpacker](https://github.com/vn-tools/arc_unpacker)                                    |         | -->
+[ass_motion](https://github.com/Bl4Cc4t/ass_motion)                                         | cf88660 | 1.1.0
+[danmaku2ass](https://github.com/m13253/danmaku2ass)                                        | ed16949 |
+[ibtool/ibdump2](https://github.com/dkimitsa/ibtool/tree/advanced_ibdump)                   | df2af75 |
+[jar2app](https://github.com/Jorl17/jar2app)                                                | 49eb2c5 |
+[Mediaextract](http://panzi.github.com/mediaextract)                                        | 5e13111 | 1.1
+[pincrush](https://github.com/DHowett/pincrush)                                             | 2f61dfc | 0.9.2
+[PNGExtract](https://github.com/jomo/PNGExtract)                                            | 0c9fd26 |
+
 
 Formulae not listed here are not working yet

@@ -1,6 +1,7 @@
 class Pngextract < Formula
   desc "Extract embedded PNG images from (binary) files"
   homepage "https://github.com/jomo/PNGExtract"
+  
   head "https://github.com/jomo/PNGExtract.git"
 
   def install
