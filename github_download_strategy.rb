@@ -39,9 +39,10 @@ class CustomGitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def set_github_token
-    @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    @github_token = ENV["HOMEBREW_GITHUB_API_SECRET"]
+
     unless @github_token
-      raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
+      raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_SECRET is required."
     end
 
     validate_github_repository_access!
@@ -54,7 +55,7 @@ class CustomGitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     # We only handle HTTPNotFoundError here,
     # becase AuthenticationFailedError is handled within util/github.
     message = <<~EOS
-      HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
+      HOMEBREW_GITHUB_API_SECRET can not access the repository: #{@owner}/#{@repo}
       This token may not have permission to access the repository or the url of formula may be incorrect.
     EOS
     raise CurlDownloadStrategyError, message
@@ -78,7 +79,7 @@ class CustomGitHubPrivateRepositoryReleaseDownloadStrategy < CustomGitHubPrivate
       raise CurlDownloadStrategyError, "Invalid url pattern for GitHub Release."
     end
 
-    _, @owner, @repo, @tag, @filename = *@url.match(url_pattern)
+    _, @owner, @repo, @filename = *@url.match(url_pattern)
   end
 
   private

@@ -1,14 +1,14 @@
 require_relative "../github_download_strategy.rb"
 
-class SkPyscrapers < Formula
+class SkScrapers < Formula
   include Language::Python::Virtualenv
 
   # desc ""
-  homepage "https://github.com/Bl4Cc4t/sk-pyscrapers"
+  homepage "https://github.com/Bl4Cc4t/sk-scrapers"
   version "0.1.1"
-  url "https://github.com/Bl4Cc4t/sk-pyscrapers/archive/0.1.1.tar.gz", :using => CustomGitHubPrivateRepositoryReleaseDownloadStrategy
+  url "https://github.com/Bl4Cc4t/sk-scrapers/archive/0.1.1.tar.gz", :using => CustomGitHubPrivateRepositoryReleaseDownloadStrategy
   sha256 "d3cd66e87fa8f6040e205a964d7e9f29b0313a3d2de22f12760c58a2d19dbc3c"
-  head "https://github.com/Bl4Cc4t/sk-pyscrapers.git"
+  head "https://github.com/Bl4Cc4t/sk-scrapers.git"
 
   depends_on "python"
 
@@ -19,17 +19,17 @@ class SkPyscrapers < Formula
 
   resource "elasticsearch" do
     url "https://files.pythonhosted.org/packages/c1/e9/35d9c0d5c6467a05f3528f21a3d56f0063fe8cf5658080dc144e3b0ac154/elasticsearch-7.0.2.tar.gz"
-    sha256 "386873257c79280552901ecc2544b185daecf9ef27c126c542daa94b6fea09bf"
+    sha256 "cbc73831c63fa2824538df76fcb2c4be007b43dbd9e7788ae70ea6d24109925b"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/01/62/ddcf76d1d19885e8579acb1b1df26a852b03472c0e46d2b959a714c90608/requests-2.22.0.tar.gz"
-    sha256 "cbc73831c63fa2824538df76fcb2c4be007b43dbd9e7788ae70ea6d24109925b"
+    sha256 "11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4"
   end
 
-  resource "sk_pytools" do
-    url "https://github.com/Bl4Cc4t/sk-pytools/archive/0.0.3.tar.gz", :using => CustomGitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "c48136a34d230f582dbc89a264f5ea858d301b7f43989fad22f81a9eb404b123"
+  resource "sk_tools" do
+    url "https://github.com/Bl4Cc4t/sk-tools/archive/0.0.5.tar.gz", :using => CustomGitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "2497ebcceced04291ac86dca3b61d7cfaebf0e734fc6d76357918656c9bd1a53"
   end
 
   resource "tqdm" do
