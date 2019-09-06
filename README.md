@@ -15,6 +15,7 @@ Install with the usual `brew install --HEAD <name>`
 Name                                                                                        | HEAD    | Release
 --------------------------------------------------------------------------------------------|---------|--------
 [ass_motion](https://github.com/Bl4Cc4t/ass_motion)                                         | cf88660 | 1.1.0
+[CRC-Manipulator](https://github.com/rr-/CRC-manipulator)                                   | bd4c619 |
 [danmaku2ass](https://github.com/m13253/danmaku2ass)                                        | ed16949 |
 [ibtool/ibdump2](https://github.com/dkimitsa/ibtool/tree/advanced_ibdump)                   | df2af75 |
 [jar2app](https://github.com/Jorl17/jar2app)                                                | 49eb2c5 |
