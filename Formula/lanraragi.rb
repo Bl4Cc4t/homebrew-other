@@ -3,21 +3,21 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi. Lightweight and Docker-ready for NAS/servers."
   homepage "https://github.com/Difegue/LANraragi"
-  version "0.6.0-BETA.2"
-  url "https://github.com/Difegue/LANraragi/archive/v.0.6.0-BETA.2.tar.gz"
-  sha256 "6c6c56246993e1b8cf752cbb301484f8f6dc85a95d89f2916a4ccea9ccc2582c"
-  head "https://github.com/Difegue/LANraragi.git"
+  # version "0.6.0-BETA.2"
+  # url "https://github.com/Difegue/LANraragi/archive/v.0.6.0-BETA.2.tar.gz"
+  # sha256 "6c6c56246993e1b8cf752cbb301484f8f6dc85a95d89f2916a4ccea9ccc2582c"
+  head "https://github.com/Bl4Cc4t/LANraragi.git", :branch => "homebrew-test"
 
   depends_on "pkg-config" => :build
   # depends_on "autoconf" => :build
   depends_on "cpanminus"
-  depends_on "redis"
   depends_on "libarchive"
   depends_on "libjpeg"
   depends_on "libpng"
-  depends_on "openssl"
   depends_on "node"
+  depends_on "openssl"
   depends_on "perl" => "5.20.2"
+  depends_on "redis"
 
   # Linux::Inotify2 does not exist on macOS. Neat!
 
@@ -73,9 +73,14 @@ class Lanraragi < Formula
     sha256 "0d47064781a545304d5dcea5dfcee3acc2e95a32e1b4884d80505cde8ee6ebcd"
   end
 
-  resource "Linux::Inotify2" do
-    url "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Linux-Inotify2-2.1.tar.gz"
-    sha256 "7265b674380026011df82b9d6219a4c980bcdc0efe913119d04878790bf6f270"
+  # resource "Linux::Inotify2" do
+  #   url "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Linux-Inotify2-2.1.tar.gz"
+  #   sha256 "7265b674380026011df82b9d6219a4c980bcdc0efe913119d04878790bf6f270"
+  # end
+
+  resource "File::ChangeNotify" do
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/File-ChangeNotify-0.31.tar.gz"
+    sha256 "192bdb1ce76266c6a694a8e962d039e3adeeb829b6ac1e23f5057f2b506392bd"
   end
 
   resource "local::lib" do
@@ -134,7 +139,8 @@ class Lanraragi < Formula
       "File::Find::utf8",
       "File::ReadBackwards",
       "IO::Socket::SSL",
-      "Linux::Inotify2",
+      # "Linux::Inotify2",
+      "File::ChangeNotify",
       "Module::Pluggable",
       "Mojo::IOLoop::ProcBackground",
       "Mojolicious",
@@ -142,11 +148,11 @@ class Lanraragi < Formula
       "Mojolicious::Plugin::TemplateToolkit",
       "local::lib",
       "Redis",
-      "URI:Escape",
+      "URI::Escape",
     ]
     resources.each do |r|
       resource(r).stage do
-        if r == "Archive::Extract::Libarchive"
+        if r == "Archive::Extract::Libarchive" or r == "Mojolicious::Plugin::TemplateToolkit"
           system "perl", "Build.PL", "--install_base", libexec
           system "./Build"
           system "./Build", "install"
@@ -161,6 +167,14 @@ class Lanraragi < Formula
 
     system "npm", "install", *Language::Node.local_npm_install_args
     system "npm", "run", "lanraragi-installer", "install-full"
-    # prefix.install Dir[""]
+    prefix.install "lib"
+    prefix.install "script"
+    prefix.install "lrr.conf"
+    prefix.install "package.json"
+    prefix.install "public"
+    prefix.install "README.md"
+    prefix.install "templates"
+    prefix.install "log"
+    bin.install "tools/homebrew-start/lanraragi"
   end
 end
