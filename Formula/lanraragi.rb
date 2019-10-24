@@ -9,7 +9,6 @@ class Lanraragi < Formula
   head "https://github.com/Bl4Cc4t/LANraragi.git", :branch => "homebrew-test"
 
   depends_on "pkg-config" => :build
-  # depends_on "autoconf" => :build
   depends_on "cpanminus"
   depends_on "libarchive"
   depends_on "libjpeg"
@@ -18,8 +17,6 @@ class Lanraragi < Formula
   depends_on "openssl"
   depends_on "perl" => "5.20.2"
   depends_on "redis"
-
-  # Linux::Inotify2 does not exist on macOS. Neat!
 
   # pre dependencies
   resource "Capture::Tiny" do
@@ -73,11 +70,6 @@ class Lanraragi < Formula
     sha256 "0d47064781a545304d5dcea5dfcee3acc2e95a32e1b4884d80505cde8ee6ebcd"
   end
 
-  # resource "Linux::Inotify2" do
-  #   url "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Linux-Inotify2-2.1.tar.gz"
-  #   sha256 "7265b674380026011df82b9d6219a4c980bcdc0efe913119d04878790bf6f270"
-  # end
-
   resource "File::ChangeNotify" do
     url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/File-ChangeNotify-0.31.tar.gz"
     sha256 "192bdb1ce76266c6a694a8e962d039e3adeeb829b6ac1e23f5057f2b506392bd"
@@ -125,6 +117,16 @@ class Lanraragi < Formula
 
 
   def install
+    inreplace Dir["tools/homebrew-start/*"] do |s|
+      if OS.mac? then
+        s.gsub! "<LANDATADIR>", "#{ENV["HOME"]}/Library/Application Support/LANraragi"
+      else
+        # not sure on this one
+        s.gsub! "<LANDATADIR>", "#{ENV["HOME"]}/LANraragi"
+      end
+    end
+    inreplace "tools/homebrew-start/redis.conf", "<LANPREFIX>", "#{prefix}"
+
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV.prepend_path "PERL5LIB", libexec/"lib"
 
@@ -175,6 +177,7 @@ class Lanraragi < Formula
     prefix.install "README.md"
     prefix.install "templates"
     prefix.install "log"
+    prefix.install "tools/homebrew-start/redis.conf"
     bin.install "tools/homebrew-start/lanraragi"
   end
 end
