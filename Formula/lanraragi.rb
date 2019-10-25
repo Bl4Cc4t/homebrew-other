@@ -50,9 +50,29 @@ class Lanraragi < Formula
     sha256 "55db4520617d859d88c0ee54965da815b7226d792b8cdc8debf92073559e0463"
   end
 
+  resource "Compress::Zlib" do
+    url "https://cpan.metacpan.org/authors/id/P/PM/PMQS/IO-Compress-2.087.tar.gz"
+    sha256 "94f792775d0496fffe862363c76637e74ff5b46c40cf47042547686d164e23cb"
+  end
+
   resource "Cpanel::JSON::XS" do
     url "https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.12.tar.gz"
     sha256 "49417b118fb111607cc7d021443e5b32fd104c0bf59d1852c95923a4916ac658"
+  end
+
+  resource "Digest::SHA" do
+    url "https://cpan.metacpan.org/authors/id/M/MS/MSHELOR/Digest-SHA-6.02.tar.gz"
+    sha256 "2c66a6bea3eac9c210315ac7bf0af3e2e35679c4b65d8bae1ad4be3a58039b06"
+  end
+
+  resource "Encode" do
+    url "https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Encode-3.01.tar.gz"
+    sha256 "d4555f570491648dbbd602bce7966672834b4c8f45acaa6757de474fca3a4d87"
+  end
+
+  resource "File::ChangeNotify" do
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/File-ChangeNotify-0.31.tar.gz"
+    sha256 "192bdb1ce76266c6a694a8e962d039e3adeeb829b6ac1e23f5057f2b506392bd"
   end
 
   resource "File::Find::utf8" do
@@ -65,19 +85,29 @@ class Lanraragi < Formula
     sha256 "82b261af87507cc3e7e66899c457104ebc8d1c09fb85c53f67c1f90f70f18d6e"
   end
 
+  resource "Image::Scale" do
+    url "https://cpan.metacpan.org/authors/id/A/AG/AGRUNDMA/Image-Scale-0.14.tar.gz"
+    sha256 "f09c5f0663b87738365ac2819e186b909abeb9ed85d83bc15ee76872c947cdf8"
+  end
+
   resource "IO::Socket::SSL" do
     url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.066.tar.gz"
     sha256 "0d47064781a545304d5dcea5dfcee3acc2e95a32e1b4884d80505cde8ee6ebcd"
   end
 
-  resource "File::ChangeNotify" do
-    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/File-ChangeNotify-0.31.tar.gz"
-    sha256 "192bdb1ce76266c6a694a8e962d039e3adeeb829b6ac1e23f5057f2b506392bd"
+  resource "IPC::Cmd" do
+    url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/IPC-Cmd-1.04.tar.gz"
+    sha256 "d110a0f60e35c65721454200f0d2f0f8965529a2add9649d1fa6f4f9eccb6430"
   end
 
   resource "local::lib" do
     url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/local-lib-2.000024.tar.gz"
     sha256 "2e9b917bd48a0615e42633b2a327494e04610d8f710765b9493d306cead98a05"
+  end
+
+  resource "Logfile::Rotate" do
+    url "https://cpan.metacpan.org/authors/id/P/PA/PAULG/Logfile-Rotate-1.04.tar.gz"
+    sha256 "810f8b7ccd8657d3b1ef53cd47582547845cebb58202b05539b3408638cada3e"
   end
 
   resource "Module::Pluggable" do
@@ -105,9 +135,19 @@ class Lanraragi < Formula
     sha256 "172913a7a655081d77b306ac8a1aab8deb8786daf1bf5faaccefc6690b0ac626"
   end
 
+  resource "Proc::Simple" do
+    url "https://cpan.metacpan.org/authors/id/M/MS/MSCHILLI/Proc-Simple-1.32.tar.gz"
+    sha256 "4c8f0a924b19ad78a13da73fe0fb306d32a7b9d10a332c523087fc83a209a8c4"
+  end
+
   resource "Redis" do
     url "https://cpan.metacpan.org/authors/id/D/DA/DAMS/Redis-1.995.tar.gz"
     sha256 "a0b07b284ff12bb852a3120723f1e63ab279df575d6c52a78f914565a9f0b906"
+  end
+
+  resource "Test::Harness" do
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.42.tar.gz"
+    sha256 "0fd90d4efea82d6e262e6933759e85d27cbcfa4091b14bf4042ae20bab528e53"
   end
 
   resource "URI::Escape" do
