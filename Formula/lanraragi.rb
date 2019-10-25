@@ -167,7 +167,7 @@ class Lanraragi < Formula
       "Archive::Extract::Libarchive",
       "Archive::Peek::Libarchive",
       "Authen::Passphrase",
-      "Compress:Zlib",
+      "Compress::Zlib",
       "Cpanel::JSON::XS",
       "Digest::SHA",
       "Encode",
