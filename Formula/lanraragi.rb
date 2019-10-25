@@ -117,16 +117,6 @@ class Lanraragi < Formula
 
 
   def install
-    inreplace Dir["tools/homebrew-start/*"] do |s|
-      if OS.mac? then
-        s.gsub! "<LANDATADIR>", "#{ENV["HOME"]}/Library/Application Support/LANraragi"
-      else
-        # not sure on this one
-        s.gsub! "<LANDATADIR>", "#{ENV["HOME"]}/LANraragi"
-      end
-    end
-    inreplace "tools/homebrew-start/redis.conf", "<LANPREFIX>", "#{prefix}"
-
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV.prepend_path "PERL5LIB", libexec/"lib"
 
