@@ -6,7 +6,7 @@ class Lanraragi < Formula
   # version "0.6.0-BETA.2"
   # url "https://github.com/Difegue/LANraragi/archive/v.0.6.0-BETA.2.tar.gz"
   # sha256 "6c6c56246993e1b8cf752cbb301484f8f6dc85a95d89f2916a4ccea9ccc2582c"
-  head "https://github.com/Bl4Cc4t/LANraragi.git", :branch => "homebrew-test"
+  head "https://github.com/Difegue/LANraragi.git", :branch => "dev"
 
   depends_on "pkg-config" => :build
   depends_on "cpanminus"
