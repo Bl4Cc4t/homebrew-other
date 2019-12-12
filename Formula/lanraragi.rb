@@ -3,9 +3,9 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi. Lightweight and Docker-ready for NAS/servers."
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://github.com/Difegue/LANraragi/archive/v.0.6.6.tar.gz"
+  url "https://github.com/Difegue/LANraragi/archive/v.0.6.7.tar.gz"
   sha256 "bc4e8db0bc4570390f5e92327ecb33caabea98696b3708f270aa06775935716b"
-  head "https://github.com/Bl4Cc4t/LANraragi.git", :branch => "homebrew-test"
+  head "https://github.com/Difegue/LANraragi.git", :branch => "master"
 
   depends_on "pkg-config" => :build
   depends_on "cpanminus"
@@ -31,8 +31,8 @@ class Lanraragi < Formula
     prefix.install "README.md"
     prefix.install "templates"
     prefix.install "log"
-    prefix.install "tools/homebrew-start/redis.conf"
-    bin.install "tools/homebrew-start/lanraragi"
+    prefix.install "tools/build/homebrew/redis.conf"
+    bin.install "tools/build/homebrew/lanraragi"
     prefix.install "tests"
   end
 
