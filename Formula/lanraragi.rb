@@ -4,11 +4,12 @@ class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi. Lightweight and Docker-ready for NAS/servers."
   homepage "https://github.com/Difegue/LANraragi"
   url "https://github.com/Difegue/LANraragi/archive/v.0.6.7.tar.gz"
-  sha256 "bc4e8db0bc4570390f5e92327ecb33caabea98696b3708f270aa06775935716b"
+  sha256 "3b47fa5eae1e1bf2c25a328c38ab8f3c5807801dce53ff27968f7fab3f38dc43"
   head "https://github.com/Difegue/LANraragi.git", :branch => "master"
 
   depends_on "pkg-config" => :build
   depends_on "cpanminus"
+  depends_on "giflib"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "libpng"
