@@ -41,8 +41,8 @@ class Lanraragi < Formula
     ENV["PERL5LIB"] = libexec/"lib/perl5"
     ENV["LRR_LOG_DIRECTORY"] = testpath/"log"
 
-    system "redis-server", "--daemonize", "yes"
+    # system "redis-server", "--daemonize", "yes"
     system "npm", "--prefix", prefix, "test"
-    system "redis-cli", "shutdown"
+    # system "redis-cli", "shutdown"
   end
 end
