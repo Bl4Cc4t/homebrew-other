@@ -3,9 +3,9 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi. Lightweight and Docker-ready for NAS/servers."
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://github.com/Difegue/LANraragi/archive/v.0.6.7.tar.gz"
-  sha256 "3b47fa5eae1e1bf2c25a328c38ab8f3c5807801dce53ff27968f7fab3f38dc43"
-  head "https://github.com/Difegue/LANraragi.git", :branch => "dev"
+  url "https://github.com/Difegue/LANraragi/archive/v.0.6.9.tar.gz"
+  sha256 "7d413a2f96fc40cff2af1473c83dcac1d95fcfccbad63a5e72c570e4d834fef9"
+  head "https://github.com/Difegue/LANraragi.git"#, :branch => "dev"
 
   depends_on "pkg-config" => :build
   depends_on "cpanminus"
@@ -33,7 +33,7 @@ class Lanraragi < Formula
       inreplace "Makefile.PL" do |s|
         s.gsub! "include/ImageMagick-6", "opt/imagemagick@6/include/ImageMagick-6"
       end
-      
+
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
       system "make"
       system "make", "install"
