@@ -3,13 +3,14 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi. Lightweight and Docker-ready for NAS/servers."
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://github.com/Difegue/LANraragi/archive/v.0.6.9.tar.gz"
-  sha256 "7d413a2f96fc40cff2af1473c83dcac1d95fcfccbad63a5e72c570e4d834fef9"
-  head "https://github.com/Difegue/LANraragi.git"#, :branch => "dev"
+  url "https://github.com/Difegue/LANraragi/archive/v.0.6.9-homebrew.tar.gz"
+  sha256 "fa915fa3251e6c0edb1bbea37cb910efeef5092dfc8f919b5123cf644ca5a454"
+  head "https://github.com/Difegue/LANraragi.git"
 
   depends_on "pkg-config" => :build
   depends_on "cpanminus"
   depends_on "giflib"
+  depends_on "imagemagick@6"
   depends_on "jpeg"
   depends_on "libarchive"
   depends_on "libpng"
@@ -17,7 +18,6 @@ class Lanraragi < Formula
   depends_on "openssl"
   depends_on "perl"
   depends_on "redis"
-  depends_on "imagemagick@6"
 
 
   resource "Image::Magick" do
@@ -41,25 +41,23 @@ class Lanraragi < Formula
 
     system "npm", "install", *Language::Node.local_npm_install_args
     system "perl", "./tools/install.pl", "install-full"
-    prefix.install "lib"
-    prefix.install "script"
-    prefix.install "lrr.conf"
-    prefix.install "package.json"
-    prefix.install "public"
+
     prefix.install "README.md"
-    prefix.install "templates"
-    prefix.install "log"
-    prefix.install "tools/build/homebrew/redis.conf"
     bin.install "tools/build/homebrew/lanraragi"
-    prefix.install "tests"
+    (libexec/"lib").install Dir["lib/*"]
+    libexec.install "script"
+    libexec.install "package.json"
+    libexec.install "public"
+    libexec.install "templates"
+    libexec.install "tests"
+    libexec.install "tools/build/homebrew/redis.conf"
+    libexec.install "lrr.conf"
   end
 
   test do
     ENV["PERL5LIB"] = libexec/"lib/perl5"
     ENV["LRR_LOG_DIRECTORY"] = testpath/"log"
 
-    # system "redis-server", "--daemonize", "yes"
     system "npm", "--prefix", prefix, "test"
-    # system "redis-cli", "shutdown"
   end
 end
