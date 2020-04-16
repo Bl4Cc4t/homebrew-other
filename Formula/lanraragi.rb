@@ -58,6 +58,6 @@ class Lanraragi < Formula
     ENV["PERL5LIB"] = libexec/"lib/perl5"
     ENV["LRR_LOG_DIRECTORY"] = testpath/"log"
 
-    system "npm", "--prefix", prefix/"libexec", "test"
+    system "npm", "--prefix", libexec, "test"
   end
 end
